@@ -1,0 +1,615 @@
+.App{
+ 
+  overflow-x: hidden;
+  height: fit-content;
+}
+
+:root {
+  --primary: #2563eb;
+  --primary-soft: #dbeafe;
+  --danger: #ef4444;
+  --bg-dark: #020617;
+  --bg-card: #0b1220;
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+  --border-subtle: rgba(148, 163, 184, 0.3);
+  --radius-lg: 18px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  background: radial-gradient(circle at top, #1e293b 0, #020617 45%, #000 100%);
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 2.4rem;
+  backdrop-filter: blur(16px);
+  background: linear-gradient(
+    to right,
+    rgba(15, 23, 42, 0.95),
+    rgba(30, 64, 175, 0.8)
+  );
+  border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.topbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.logo-mark {
+  font-size: 1.6rem;
+}
+
+.logo-text {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+.topbar-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-link-button {
+  border: none;
+  background: transparent;
+  color: var(--text-main);
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.nav-link-button:hover {
+  background: rgba(15, 23, 42, 0.8);
+  transform: translateY(-1px);
+}
+
+.primary-nav-btn {
+  background: #f97316;
+  color: #0b1120;
+  font-weight: 600;
+}
+
+.primary-nav-btn:hover {
+  background: #fb923c;
+}
+
+.danger-nav-btn {
+  border: 1px solid rgba(239, 68, 68, 0.6);
+}
+
+
+.role-pill {
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+
+
+.auth-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  min-height: calc(100vh - 60px);
+}
+
+.auth-illustration {
+  background-image: url('../src/assets/areoplane.jpg'); 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.auth-illustration-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(15, 23, 42, 0.95),
+    rgba(15, 23, 42, 0.5)
+  );
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #e5e7eb;
+}
+
+.auth-illustration-overlay h1 {
+  font-size: 2rem;
+  max-width: 420px;
+}
+
+.auth-illustration-overlay p {
+  margin-top: 0.75rem;
+  max-width: 430px;
+  color: var(--text-muted);
+}
+
+.auth-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+}
+
+
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: #020617;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  padding: 1.8rem 2rem;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.7);
+}
+
+.auth-card-header h2 {
+  margin: 0;
+}
+
+.auth-card-header p {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.auth-card-body {
+  margin-top: 1.3rem;
+}
+
+.auth-input .form-control,
+.auth-input .form-select {
+  background-color: #020617;
+  color: var(--text-main);
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+}
+
+.auth-input label {
+  color: var(--text-muted);
+}
+
+.auth-btn {
+  width: 100%;
+  margin-top: 0.4rem;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+}
+
+.auth-switch-text {
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.link-button {
+  border: none;
+  background: transparent;
+  color: #60a5fa;
+  cursor: pointer;
+  padding: 0;
+}
+
+
+
+.landing-root {
+  color: var(--text-main);
+}
+
+.landing-hero {
+  padding: 2.5rem 2.4rem 1.5rem;
+  background-image: url('../src/assets/HomeBG1.png'); 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-overlay {
+  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.7), #020617);
+  border-radius: 24px;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2rem;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.hero-text-block h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero-text-block p {
+  color: var(--text-muted);
+}
+
+.hero-points {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.2rem;
+  font-size: 0.95rem;
+}
+
+
+
+.hero-search-card {
+  background: #020617;
+  border-radius: 18px;
+  padding: 1.5rem;
+  border: 1px solid var(--border-subtle);
+}
+
+.hero-search-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.trip-toggle {
+  display: inline-flex;
+  background: #020617;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  overflow: hidden;
+}
+
+.trip-toggle-btn {
+  padding: 0.3rem 0.9rem;
+  font-size: 0.8rem;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.trip-toggle-btn.active {
+  background: #1d4ed8;
+  color: white;
+}
+
+.hero-search-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.hero-search-grid .form-control,
+.hero-search-grid .form-select {
+  background-color: #020617;
+  color: var(--text-main);
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+}
+
+.search-error {
+  color: #fca5a5;
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+}
+
+.search-btn {
+  margin-top: 0.9rem;
+  width: 100%;
+}
+
+
+
+.results-section {
+  padding: 2.4rem;
+}
+
+.results-header {
+  margin-bottom: 1.3rem;
+}
+
+.Flights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.Flight-card {
+  background: #020617;
+  border-radius: 16px;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.Flight-main {
+  display: grid;
+  grid-template-columns: 1.2fr repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.Flight-name {
+  font-weight: 600;
+}
+
+.Flight-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.Flight-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+}
+
+.Flight-value {
+  font-size: 0.9rem;
+}
+
+.Flight-price {
+  font-weight: 600;
+}
+
+.Flight-seats {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.Flight-book-btn {
+  align-self: flex-end;
+  padding-inline: 1.5rem;
+}
+
+
+.page-header {
+  padding: 2rem 2.4rem 1rem;
+}
+
+.bookings-page {
+  min-height: 100vh;
+}
+
+.bookings-list {
+  padding: 0 2.4rem 2.4rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.booking-card {
+  background: #020617;
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  padding: 1.2rem 1.4rem;
+}
+
+.booking-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.booking-id {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.booking-status {
+  font-size: 0.85rem;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.status-pill.confirmed {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+}
+
+.status-pill.cancelled {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+}
+
+.status-pill.pending {
+  background: rgba(249, 115, 22, 0.15);
+  color: #fdba74;
+}
+
+.booking-price span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.booking-price strong {
+  display: block;
+  font-size: 1.1rem;
+}
+
+.booking-card-body {
+  margin-top: 0.9rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.booking-route,
+.booking-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.7rem;
+}
+
+.label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.value {
+  font-size: 0.9rem;
+}
+
+.booking-passengers ol {
+  margin: 0.3rem 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.9rem;
+}
+
+.booking-actions {
+  margin-top: 0.9rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+
+.admin-page {
+  min-height: 100vh;
+}
+
+.admin-summary-grid {
+  padding: 1rem 2.4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.summary-card {
+  background: #020617;
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  padding: 1.1rem 1.3rem;
+}
+
+.summary-card h4 {
+  margin-bottom: 0.4rem;
+}
+
+.summary-value {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.admin-requests-container {
+  padding: 1.4rem 2.4rem 2.4rem;
+}
+
+.section-header p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.admin-requests {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.admin-request {
+  background: #020617;
+  border-radius: 14px;
+  border: 1px solid var(--border-subtle);
+  padding: 0.9rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-request-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.empty-text {
+  color: var(--text-muted);
+}
+
+
+
+.section-about {
+  padding: 2.4rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.8);
+  background: radial-gradient(circle at top, #020617, #020617 40%, #000 100%);
+}
+
+.about-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.about-inner h2 {
+  margin-bottom: 0.6rem;
+}
+
+.about-inner p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.about-footer {
+  display: block;
+  margin-top: 0.8rem;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+
+@media (max-width: 900px) {
+  .auth-page {
+    grid-template-columns: 1fr;
+  }
+  .auth-illustration {
+    display: none;
+  }
+  .hero-overlay {
+    grid-template-columns: 1fr;
+  }
+  .hero-search-grid {
+    grid-template-columns: 1fr;
+  }
+}
